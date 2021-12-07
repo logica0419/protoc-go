@@ -1,7 +1,6 @@
 # protoc-go
 
 [![CI Pipeline](https://github.com/logica0419/protoc-go/actions/workflows/CI.yml/badge.svg)](https://github.com/logica0419/protoc-go/actions/workflows/CI.yml)
-[![Release](https://github.com/logica0419/protoc-go/actions/workflows/release.yml/badge.svg)](https://github.com/logica0419/protoc-go/actions/workflows/release.yml)
 [![Docker Pulls](https://img.shields.io/docker/pulls/logica0419/protoc-go?logo=docker)](https://hub.docker.com/r/logica0419/protoc-go/)
 
 Protobuf & Go Compiling Environment on Docker  

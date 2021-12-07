@@ -24,8 +24,7 @@ jobs:
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
         with:
-          registry: ghcr.io
-          username: ${{ logica0419 }}
+          username: logica0419
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2

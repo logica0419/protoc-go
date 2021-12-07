@@ -10,7 +10,7 @@ env:
 
 jobs:
   build:
-    name: Build Docker Image
+    name: Build and Push Docker Image
     runs-on: ubuntu-latest
     steps:
       - name: Set IMAGE_TAG env
@@ -25,8 +25,8 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          username: ${{ logica0419 }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
@@ -34,5 +34,5 @@ jobs:
           push: true
           platforms: linux/amd64, linux/arm64
           tags: |
-            ghcr.io/logica0419/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            ghcr.io/logica0419/${{ env.IMAGE_NAME }}:latest
+            logica0419/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+            logica0419/${{ env.IMAGE_NAME }}:latest

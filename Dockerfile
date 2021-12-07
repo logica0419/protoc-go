@@ -4,7 +4,8 @@ FROM golang:1.17.4 AS builder
 WORKDIR /protoc
 RUN apt update && apt install git make curl jq unzip -y
 
-RUN wget "https://github.com/protocolbuffers/protobuf/releases/download/v${protoc_version}/protoc-${protoc_version}-linux-x86_64.zip" -O "protobuf.zip"
+RUN URI=https://github.com/protocolbuffers/protobuf/releases/download/v${protoc_version}/protoc-${protoc_version}-linux-x86_64.zip && \
+  wget "$URI" -O "protobuf.zip"
 RUN unzip -o protobuf.zip -d protobuf
 RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 

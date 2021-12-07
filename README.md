@@ -11,7 +11,7 @@ Protobuf & Go Compiling Environment on Docker
 ### Pull
 
 ```sh
-docker pull logica0419/protoc-go
+docker pull logica0419/protoc-go:latest
 ```
 
 ### In Dockerfile (as a Builder)

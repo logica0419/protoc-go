@@ -8,7 +8,6 @@ on:
 env:
   IMAGE_NAME: protoc-go
   IMAGE_TAG: main
-  PROTOC_VERSION: 3.19.1
 
 jobs:
   build:
@@ -35,7 +34,6 @@ jobs:
           context: .
           push: true
           platforms: linux/amd64, linux/arm64
-          build-args: protoc_version=${{ env.PROTOC_VERSION }}
           tags: ghcr.io/logica0419/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
 
   scan:

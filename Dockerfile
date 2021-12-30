@@ -1,6 +1,6 @@
 FROM golang:1.17.5 AS builder
 WORKDIR /protoc
-RUN apt update && apt install git make curl jq unzip -y
+RUN apt update && apt install jq unzip -y
 
 RUN URI=$(curl -s https://api.github.com/repos/protocolbuffers/protobuf/releases | jq -r '.[0].assets[] | select(.name | test("linux-x86_64.zip")) | .browser_download_url') && \
   wget "$URI" -O "protobuf.zip"

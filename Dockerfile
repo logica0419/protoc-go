@@ -1,4 +1,4 @@
-FROM golang:1.17.7 AS builder
+FROM golang:1.18.4 AS builder
 WORKDIR /protoc
 RUN apt update && apt install jq unzip -y
 
@@ -11,7 +11,7 @@ RUN go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 RUN go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 RUN go install github.com/pseudomuto/protoc-gen-doc/cmd/protoc-gen-doc@latest
 
-FROM golang:1.17.7 AS compiler
+FROM golang:1.18.4 AS compiler
 
 COPY --from=builder /protoc/protobuf/bin /usr/local/bin/
 COPY --from=builder /protoc/protobuf/include /usr/local/include/
